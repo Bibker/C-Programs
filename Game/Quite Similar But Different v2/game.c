@@ -3,15 +3,20 @@
 #include <string.h>
 #include <stdlib.h>
 #include <io.h>
+#include <dos.h>
 
 
 void welcome(void);
 void instructions(void);
 void gamePlay(void);
-void step3(void);
-void step4(void);
-void exitGame(void);
+void wordsCounter(void);
 void score(void);
+void firstPlayerTurn(void);
+void secondPlayerTurn(void);
+void winner(void);
+void exitGame(void);
+
+
 
 
 char name1[15], name2[15], que1[15], que2[15], ans[15], replay;
@@ -19,7 +24,7 @@ int i=1 ,check,check1,c,score1=0,score2=0,words,wordsP,wordsR,wordsD,total,wrong
 
 int main(){
 
-   checkUser();
+    sound(21);
     welcome();
     instructions();
 
@@ -27,35 +32,25 @@ int main(){
     do{
     gamePlay();
     for(c=0;c<words;c++){
-    step3();
-    step4();
+    firstPlayerTurn();
+    secondPlayerTurn();
     }
     exitGame();
     getch();
     system("cls");
-    printf("FInal Score\n%s:%d\n%s:%d\n",name1,score1,name2,score2);
-    if(score1<score2){
-        printf("%s won the game.",name2);
-
-    }
-    else if(score1==score2){
-        printf("The match is tie.");
-    }
-    else{
-        printf("%S won the game.",name1);
-
-    }
-    printf("\nPress enter to continue.");
-    getch();
-    system("cls");
+    winner();
     printf("\nDO you want to play again(y/n)?\n");
     replay=getche();
     }
     while(replay=='y');
 }
 
+//********************************************************************************************
+                                  //Functions are Defined Here
+//********************************************************************************************
 
 
+//1
 void welcome(){
  while(i<20){
         printf(" ");
@@ -70,6 +65,9 @@ printf("\n Press any key to continue....");
 getch();
 system("cls");
 }
+
+//2
+
 void instructions(){
     int i=1;
  while(i<20){
@@ -85,13 +83,15 @@ getch();
 system("cls");
 }
 
+//3
+
 void gamePlay(){
     score1=0;
     score2=0;
     wordsP=0;
     wordsR=0;
     wordsCheck:
-printf("\nHow many words do you want to play(1 to 20)? /nENTER===> ");
+printf("\nHow many words do you want to play(1 to 20)? \nENTER===> ");
 scanf("%d",&words);
 if(words>20||words<1){
     printf("You have entered %d/nPlease Enter from 1 to 20.",words);
@@ -99,7 +99,10 @@ if(words>20||words<1){
 }
 system("cls");
 }
-void playTime(){
+
+//4
+
+void wordsCounter(){
     int con1=1;
     total=words;
     printf("TOtal Words:%d",total);
@@ -109,6 +112,9 @@ void playTime(){
     }
     printf("Words Played: %d       Words Remain..: %d\n",wordsP,wordsR);
 }
+
+//5
+
 void score(){
     int con=1;
     while(con<40){
@@ -118,11 +124,13 @@ void score(){
     printf("%s's score:%d       %s's score: %d",name1,score1,name2,score2);
 }
 
-void step3(){
+//6
+
+void firstPlayerTurn(){
 
     wordsR=words-wordsP;
     system("cls");
-    playTime();
+    wordsCounter();
     score();
 printf("\nEnter the correct word, %s:",name1);
 scanf("%s",&que1);
@@ -142,7 +150,7 @@ else{
 printf("\n\n\n\n\n\nPress any key to continue....");
 getch();
 system("cls");
-playTime();
+wordsCounter();
 score();
 printf("\nHint:%s\n",que2);
 printf("\nGuess the word,%s:\nIf you cant guess type 'pass' and press enter.\nEnter==> ",name2);
@@ -164,13 +172,14 @@ else{
 }
 getch();
 system("cls");
-playTime();
+wordsCounter();
 score();
 }
 }
 
+//7
 
-void step4(){
+void secondPlayerTurn(){
 printf("\nEnter the correct word, %s:",name2);
 scanf("%s",&que1);
 hint:
@@ -188,7 +197,7 @@ else{
 printf("\n\n\n\n\n\nPress any key to continue....");
 getch();
 system("cls");
-playTime();
+wordsCounter();
 score();
 printf("\nHint:%s\n",que2);
 printf("\nGuess the word,%s:\nIf you cant guess type 'pass' and press enter.\nEnter==> ",name1);
@@ -213,12 +222,35 @@ getch();
 }
  }
 
+//8
+
+void winner(){
+
+  printf("FInal Score\n%s:%d\n%s:%d\n",name1,score1,name2,score2);
+    if(score1<score2){
+        printf("%s won the game.",name2);
+
+    }
+    else if(score1==score2){
+        printf("The match is tie.");
+    }
+    else{
+        printf("%S won the game.",name1);
+
+    }
+    printf("\nPress enter to continue.");
+    getch();
+    system("cls");
+}
+
+//9
+
 void exitGame(){
 system("cls");
 wordsR=words-wordsP;
-playTime();
+wordsCounter();
 score();
 printf("\n\n\n\nGame Over\nPress Enter..");
 getch();
 }
-
+//function definitions ends here
