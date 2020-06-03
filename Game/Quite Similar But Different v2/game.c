@@ -2,9 +2,61 @@
 #include <conio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <io.h>
+
+
+void welcome(void);
+void instructions(void);
+void gamePlay(void);
+void step3(void);
+void step4(void);
+void exitGame(void);
+void score(void);
+
+
 char name1[15], name2[15], que1[15], que2[15], ans[15], replay;
 int i=1 ,check,check1,c,score1=0,score2=0,words,wordsP,wordsR,wordsD,total,wrongHint1,wrongHint2,comparee;
-void step1(){
+
+int main(){
+
+   checkUser();
+    welcome();
+    instructions();
+
+
+    do{
+    gamePlay();
+    for(c=0;c<words;c++){
+    step3();
+    step4();
+    }
+    exitGame();
+    getch();
+    system("cls");
+    printf("FInal Score\n%s:%d\n%s:%d\n",name1,score1,name2,score2);
+    if(score1<score2){
+        printf("%s won the game.",name2);
+
+    }
+    else if(score1==score2){
+        printf("The match is tie.");
+    }
+    else{
+        printf("%S won the game.",name1);
+
+    }
+    printf("\nPress enter to continue.");
+    getch();
+    system("cls");
+    printf("\nDO you want to play again(y/n)?\n");
+    replay=getche();
+    }
+    while(replay=='y');
+}
+
+
+
+void welcome(){
  while(i<20){
         printf(" ");
         i++;
@@ -18,7 +70,7 @@ printf("\n Press any key to continue....");
 getch();
 system("cls");
 }
-void step2(){
+void instructions(){
     int i=1;
  while(i<20){
         printf(" ");
@@ -32,13 +84,19 @@ printf("\n \n \n \n \n \n Press any key to continue...");
 getch();
 system("cls");
 }
+
 void gamePlay(){
     score1=0;
     score2=0;
     wordsP=0;
     wordsR=0;
-printf("\nHow many words do you want to play(10 to 20)? \nENTER===> ");
+    wordsCheck:
+printf("\nHow many words do you want to play(1 to 20)? /nENTER===> ");
 scanf("%d",&words);
+if(words>20||words<1){
+    printf("You have entered %d/nPlease Enter from 1 to 20.",words);
+    goto wordsCheck;
+}
 system("cls");
 }
 void playTime(){
@@ -110,6 +168,8 @@ playTime();
 score();
 }
 }
+
+
 void step4(){
 printf("\nEnter the correct word, %s:",name2);
 scanf("%s",&que1);
@@ -151,46 +211,14 @@ else{
 wordsP++;
 getch();
 }
-}
-void exit1(){
+ }
+
+void exitGame(){
 system("cls");
 wordsR=words-wordsP;
 playTime();
 score();
 printf("\n\n\n\nGame Over\nPress Enter..");
-getch();}
-
-int main(){
-    step1();
-    step2();
-
-
-    do{
-    gamePlay();
-    for(c=0;c<words;c++){
-    step3();
-    step4();
-    }
-    exit1();
-    getch();
-    system("cls");
-    printf("FInal Score\n%s:%d\n%s:%d\n",name1,score1,name2,score2);
-    if(score1<score2){
-        printf("%s won the game.",name2);
-
-    }
-    else if(score1==score2){
-        printf("The match is tie.");
-    }
-    else{
-        printf("%S won the game.",name1);
-
-    }
-    printf("\nPress enter to continue.");
-    getch();
-    system("cls");
-    printf("\nDO you want to play again(y/n)?\n");
-    replay=getche();
-    }
-    while(replay=='y');
+getch();
 }
+
