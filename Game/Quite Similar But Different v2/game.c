@@ -24,7 +24,6 @@ int i=1 ,check,check1,c,score1=0,score2=0,words,wordsP,wordsR,wordsD,total,wrong
 
 int main(){
 
-    sound(21);
     welcome();
     instructions();
 
