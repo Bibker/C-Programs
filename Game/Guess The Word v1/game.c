@@ -12,9 +12,9 @@ void step1(){
 
     }
     printf("____WElcome to Guess Challange Game____\n");
-    printf("Enter name of 1st player\n--->");
+    printf("Enter name of First player\n--->");
     scanf("%s",&p1);
-    printf("\nEnter name of 2nd player\n--->");
+    printf("\nEnter name of Second player\n--->");
     scanf("%s",&p2);
     printf("\nPRESS ANY KEY TO CONTINUE...");
     getch();
