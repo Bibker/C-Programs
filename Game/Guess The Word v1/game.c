@@ -64,7 +64,7 @@ void p1playing(){
     printf("\n Your word has been stored sucessfully..\n");
     printf("Now Enter the same word with '_' in the middle\nEnter it ====>");
     scanf("%s",&halfWord);
-    printf("Press Enter..");
+    printf("Press Enter...");
     getch();
     system("cls");
     score();
