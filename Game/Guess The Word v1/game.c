@@ -22,7 +22,7 @@ void step1(){
 }
 
 void step2(){
-    printf("GAME INSTRUCTIONS...\n");
+    printf("GAME INSTRUCTIONS ARE...\n");
     getch();
     printf("1. This is a multiplayer game.\nAt first player1 should input a word which is to be guessed by player2.\n");getch();
     printf("2. Then press enter and again enter the same word.\n But this time place some '_' in between letters.\n");getch();
