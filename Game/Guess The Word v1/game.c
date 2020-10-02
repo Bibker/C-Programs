@@ -16,7 +16,7 @@ void step1(){
     scanf("%s",&p1);
     printf("\nEnter name of Second player\n--->");
     scanf("%s",&p2);
-    printf("\nPRESS ANY KEY TO CONTINUE...");
+    printf("\nPRESS ANY KEY TO CONTINUE....");
     getch();
     system("cls");
 }
@@ -43,7 +43,7 @@ void step2(){
 }
 void score(){
      while(i<50){
-            printf(" ");
+            printf("  ");
             i++;
             }
 
@@ -64,7 +64,7 @@ void p1playing(){
     printf("\n Your word has been stored sucessfully..\n");
     printf("Now Enter the same word with '_' in the middle\nEnter it ====>");
     scanf("%s",&halfWord);
-    printf("Press Enter..");
+    printf("Press Enter...");
     getch();
     system("cls");
     score();
