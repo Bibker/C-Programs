@@ -11,7 +11,7 @@ void step1(){
             i++;
 
     }
-    printf("____WElcome to Guess Challange Game____\n");
+    printf("____WElcome to Guess Challange____\n");
     printf("Enter name of 1st player\n--->");
     scanf("%s",&p1);
     printf("\nEnter name of 2nd player\n--->");
@@ -22,7 +22,7 @@ void step1(){
 }
 
 void step2(){
-    printf("GAME INSTRUCTIONS OF GAME ARE...\n");
+    printf("GAME INSTRUCTIONS...\n");
     getch();
     printf("1. This is a multiplayer game.\nAt first player1 should input a word which is to be guessed by player2.\n");getch();
     printf("2. Then press enter and again enter the same word.\n But this time place some '_' in between letters.\n");getch();
