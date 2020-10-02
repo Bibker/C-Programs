@@ -141,7 +141,7 @@ if(score1>score2){
 }
 else if(score1==score2){
     printf("\nThe match is draw.\nCongratulation to both!!\n");
-    printf("\nPress any key...\n\n\n");
+    printf("\nPress any key....\n\n\n");
 getch();
 }
 else{
