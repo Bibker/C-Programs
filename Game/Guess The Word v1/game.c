@@ -7,7 +7,7 @@ int i=1,wordcount=1,check,score1=0,score2=0;
 void step1(){
 
     while(i<25){
-            printf(" ");
+            printf("   ");
             i++;
 
     }
