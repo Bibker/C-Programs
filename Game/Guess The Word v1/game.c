@@ -16,7 +16,7 @@ void step1(){
     scanf("%s",&p1);
     printf("\nEnter name of Second player\n--->");
     scanf("%s",&p2);
-    printf("\nPRESS ANY KEY TO CONTINUE...");
+    printf("\nPRESS ANY KEY TO CONTINUE....");
     getch();
     system("cls");
 }
