@@ -11,7 +11,7 @@ void step1(){
             i++;
 
     }
-    printf("____WElcome to Guess Challange____\n");
+    printf("____WElcome to Guess Challange Game____\n");
     printf("Enter name of 1st player\n--->");
     scanf("%s",&p1);
     printf("\nEnter name of 2nd player\n--->");
