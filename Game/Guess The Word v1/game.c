@@ -43,7 +43,7 @@ void step2(){
 }
 void score(){
      while(i<50){
-            printf(" ");
+            printf("  ");
             i++;
             }
 
