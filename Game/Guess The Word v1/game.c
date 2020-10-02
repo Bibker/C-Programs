@@ -7,14 +7,14 @@ int i=1,wordcount=1,check,score1=0,score2=0;
 void step1(){
 
     while(i<25){
-            printf(" ");
+            printf("   ");
             i++;
 
     }
-    printf("____WElcome to Guess Challange____\n");
-    printf("Enter name of 1st player\n--->");
+    printf("____WElcome to Guess Challange Game____\n");
+    printf("Enter name of First player\n--->");
     scanf("%s",&p1);
-    printf("\nEnter name of 2nd player\n--->");
+    printf("\nEnter name of Second player\n--->");
     scanf("%s",&p2);
     printf("\nPRESS ANY KEY TO CONTINUE...");
     getch();
@@ -22,7 +22,7 @@ void step1(){
 }
 
 void step2(){
-    printf("GAME INSTRUCTIONS...\n");
+    printf("GAME INSTRUCTIONS OF GAME ARE...\n");
     getch();
     printf("1. This is a multiplayer game.\nAt first player1 should input a word which is to be guessed by player2.\n");getch();
     printf("2. Then press enter and again enter the same word.\n But this time place some '_' in between letters.\n");getch();
